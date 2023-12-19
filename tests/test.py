@@ -1,16 +1,28 @@
+import unittest
 import requests
-import json
-'''
-not done yet
-'''
-json_data = {
-    "username": "user",
-    "password": "your_password22"
-}
-url = 'http://127.0.0.1:5000/api/v2/add_password'
-url2 = 'http://127.0.0.1:5000/api/v2/check_password'
-url3 = 'http://127.0.0.1:5000/api/v2/remove_password'
-#response = requests.post(url, json=json_data, verify=False)
-#response = requests.get(url2, json=json_data, verify=False)
-response2 = requests.post(url3, json=json_data, verify=False)
-print(response2.text)
+
+
+class TestAPI(unittest.TestCase):
+    def setUp(self):
+        self.url_add = 'http://127.0.0.1:5000/api/v2/add_password'
+        self.url_check = 'http://127.0.0.1:5000/api/v2/check_password'
+        self.url_remove = 'http://127.0.0.1:5000/api/v2/remove_password'
+        
+    def test_easy_password(self):
+        json_data = {
+            "username": "user",
+            "password": "password"
+        }
+        response = requests.post(self.url_add, json=json_data, verify=False)
+        self.assertEqual(response.status_code, 400)
+    def test_hard_password(self):
+        json_data = {
+            "username": "user",
+            "password": "e82O&(Z2Xj'7"
+        }
+        response = requests.post(self.url_add, json=json_data, verify=False)
+        self.assertEqual(response.status_code, 200)
+    
+    
+if __name__ == "__main__":
+    unittest.main()

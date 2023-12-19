@@ -1,5 +1,4 @@
-# Project Documentation: Flask Server
-## Introduction
+# Project Documentation
 
 Welcome to the documentation for my project, which includes a Flask sever and a parser (extra: test client). This documentation will guide you through the installation and usage of the project components.
 

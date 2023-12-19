@@ -3,6 +3,7 @@ from flask_pymongo import PyMongo
 from hashing import Hasher
 import pwnedpasswords as pwdc
 
+
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/new"
 mongo = PyMongo(app)

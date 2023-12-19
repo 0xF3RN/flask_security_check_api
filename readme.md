@@ -10,13 +10,13 @@ To get started with the project, follow these installation steps:
 1) Clone the repository:
 
 ```bash
-git clone https://github.com/cutecei/simple_hash_server.git
+git clone https://github.com/cutecei/flask_security_check_api.git
 ```
 
 2) Navigate to the project directory:
 
 ```bash
-cd simple_hash_server
+cd flask_security_check_api
 ```
 
 3) Install the project dependencies:
@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ```
 
 4) Run MongoDB server
-   Make sure you have created new collection
+   Make sure you have created ```new``` collection
 
 6) Run server
 ```bash
